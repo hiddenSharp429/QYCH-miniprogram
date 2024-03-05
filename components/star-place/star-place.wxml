@@ -1,0 +1,46 @@
+<view class="star-bubble {{direction}}">
+  <view class="star-bubble-head {{direction}}" wx:if="{{status == 'close'}}"></view>
+  <view class="star-bubble-body {{direction}}">
+    <view wx:if="{{status == 'close'}}" class="close" selectable="false" bind:tap="showDetail">
+      <ul class="dot-list">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </view>
+    <view wx:if="{{status == 'detail'}}" class="detail" selectable="true">
+      <van-skeleton title row="8" title-width="70%" custom-class="skeleton" title-class="skeleton-title" row-class="skeleton-row" row-width="['50%', '100%', '50%', '100%', '50%', '100%', '50%', '100%']" loading="{{ loading }}">
+        <view wx:for="{{detail_inf}}">
+          <view class="title">{{item.name}}</view>
+          <view class="content">
+            <view class="star-sub-title">【开放时间】</view>
+            <view class="star-sub-content">{{item.openingHours}}</view>
+            <view class="star-sub-title">【交通】</view>
+            <view class="star-sub-content">{{item.traffic}}</view>
+            <view class="star-sub-title">【景区电话】</view>
+            <view class="star-sub-content">{{item.phone}}</view>
+            <view class="star-sub-title">【门票】</view>
+            <view class="star-sub-content">{{item.ticketPrace}}</view>
+          </view>
+        </view>
+      </van-skeleton>
+      <view class="back-to-close-status">
+        <van-icon name="close" size="40rpx" bind:click="backToClose" />
+      </view>
+      <view class="more-detail">
+        <van-icon name="ellipsis" size="40rpx" bind:click="showMore" />
+      </view>
+    </view>
+    <view wx:if="{{status == 'more'}}" class="more" selectable="false" wx:for="{{detail_inf}}">
+      <view class="back-to-close-status">
+        <van-icon name="close" size="40rpx" bind:click="backToClose" />
+      </view>
+      <view class="star-introduction">{{item.introduction}}</view>
+      <swiper circular class="star-photo-box" layout-type="transformer" transformer-type="scaleAndFade" display-multiple-items="1.5" previous-margin="30px">
+        <swiper-item wx:for="{{item.photoURL}}" wx:key="*this">
+          <image class="star-photo" src="{{item}}" mode="aspectFill" bindtap="viewImage" data-src="{{item}}" />
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>

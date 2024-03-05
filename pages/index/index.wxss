@@ -1,0 +1,206 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.loading {
+  position: absolute;
+  z-index: 999;
+}
+.walking{
+  position: absolute;
+  z-index: 999;
+}
+
+/* NAV-BAR样式START */
+.nav {
+  z-index: 2;
+}
+
+/* NAV-BAR样式END */
+
+
+
+/* 地图样式START */
+.map_container {
+  z-index: 100;
+  width: 100%;
+  height: 93%;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  flex-direction: column;
+  /* background-color: black; */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.map {
+  width: 90%;
+  height: 90%;
+  /* border: 2rpx solid gray; */
+}
+
+.border {
+  box-sizing: border-box;
+  position: relative;
+  background: black;
+  background: linear-gradient(to top right, #5D5D5B, #383838);
+  margin-top: 20rpx;
+  padding: 6rpx;
+  border-radius: 20rpx;
+}
+
+.border:before {
+  content: ' ';
+  display: block;
+  padding-bottom: 71vh;
+}
+
+.frame {
+  left: 2%;
+  top: 1.5%;
+  /* 在微信小程序中，不支持使用 inset 阴影效果 */
+  box-shadow: -1px 1px 6px 1px rgba(0, 0, 0, .24);
+  width: 96%;
+  height: 97%;
+  background: white;
+  align-items: center;
+  display: flex;
+  padding: 18rpx;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.frame-mov-area {
+  width: 100%;
+  height: 100%;
+
+}
+
+.image {
+  /* 在微信小程序中，不支持使用 background-size 和 background-position */
+  /* 如果需要自适应背景图片，可以使用 image 组件 */
+  /* 如果需要调整背景图片的位置，可以使用 cover-view 组件 */
+  box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, .2);
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  /* 在微信小程序中，如果要设置背景图片，可以使用 image 组件 */
+}
+
+.star {
+  position: absolute;
+}
+
+/* 地图样式END */
+
+/* 导航栏的样式  START*/
+#navbarContainer {
+  width: 100%;
+  height: 90%;
+  margin-bottom: 5rpx;
+  background-color: #ffcc80;
+  border-radius: 40rpx;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20rpx 20rpx rgba(0, 0, 0, 0.19), 0 12rpx 12rpx rgba(0, 0, 0, 0.23);
+}
+
+
+#navbar {
+  width: 100%;
+  height: 120rpx;
+  background-color: #fff;
+  position: absolute;
+}
+
+#bubbleWrapper {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  bottom: 50rpx;
+}
+
+.bubble {
+  background-color: #fff;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  z-index: 1;
+  transform: translateY(120%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  opacity: 0;
+}
+
+#bubble1 {
+  transform: translateY(0%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#bubble1 span {
+  opacity: 0.7;
+}
+
+#bgWrapper {
+  width: 100%;
+  height: 200rpx;
+  position: absolute;
+  bottom: 120rpx;
+}
+
+#bg {
+  background-color: #ffcc80;
+  width: 120%;
+  height: 100%;
+  margin-left: -10%;
+}
+
+#bgBubble {
+  position: absolute;
+  background-color: #ffcc80;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  bottom: -100rpx;
+  left: 95rpx;
+  transform: translateX(-50%);
+}
+
+#menuWrapper {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menuElement {
+  opacity: 0.4;
+  transform: translateY(100%);
+  cursor: pointer;
+}
+
+
+#contentWrapper {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 导航栏的样式END */

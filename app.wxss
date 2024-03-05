@@ -1,0 +1,12 @@
+/**app.wxss**/
+.loading{
+  position: absolute;
+  z-index: 1;
+}
+
+.btn{
+  z-index: 2;
+}
+.nav{
+  z-index: 2;
+}

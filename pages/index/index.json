@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar",
+    "my-loading": "/components/my-loading/my-loading",
+    "walking-loading": "/components/walk-loading/walking-loading",
+    "star-place": "/components/star-place/star-place",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
+  }
+}

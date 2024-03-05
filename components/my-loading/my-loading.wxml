@@ -1,0 +1,13 @@
+<view class="loading_container" style="{{showLoading ? '' : 'display: none;'}}">
+  <view class="img_container">
+    <image class="logo" src="{{logo_url}}" mode="aspectFit" lazy-load="true" binderror="" bindload="" />
+  </view>
+  <div class="load">
+    <ul style="list-style-type:none">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</view>

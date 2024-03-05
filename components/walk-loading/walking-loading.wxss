@@ -1,0 +1,34 @@
+/* components/walk-loading/walking-loading.wxss */
+.walk_loading_container{
+    position: fixed;
+    top: 18vh;
+    background-color: rgb(114, 114, 114);
+    width: 100%;
+    height: 70%;
+    z-index: 100;
+    opacity: 0.95;
+}
+.box {
+    background-image: url(https://img1.baidu.com/it/u=3361754298,960828090&fm=253&fmt=auto&app=138&f=PNG?w=1472&h=325);
+    height: 325px;
+    /*平均高度*/
+    width: 184px;
+    /*平均宽度*/
+    margin: 0 auto;
+    animation-name: run;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(8);
+    opacity: 1;
+}
+
+@keyframes run {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -1472px 0;
+    }
+
+}

@@ -1,0 +1,290 @@
+/* components/start-place/start-place.wxss */
+
+/* 框架 start */
+.star-bubble {
+    background-color: transparent;
+    display: flex;
+    /* align-items: center; */
+    height: auto;
+    width: auto;
+}
+
+.star-bubble.left {
+    flex-direction: row-reverse;
+    width: auto;
+}
+
+.star-bubble.right {
+    flex-direction: row;
+    width: 100%;
+}
+
+.star-bubble-body {
+    min-width: 80rpx;
+    min-height: 80rpx;
+    height: auto;
+    max-width: 70%;
+    display: flex;
+    border-radius: 10px;
+}
+
+.star-bubble-body.left {
+    background-color: #f0f0f0;
+}
+
+.star-bubble-body.right {
+    background-color: #f0f0f0;
+}
+
+.star-bubble-head {
+    margin-top: 20rpx;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.star-bubble-head.left {
+    content: '';
+    width: 0;
+    height: 0;
+    border-width: 20rpx 0 20rpx 20rpx;
+    border-color: transparent transparent transparent #f0f0f0;
+}
+
+.star-bubble-head.right {
+    content: '';
+    width: 0;
+    height: 0;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #f0f0f0 transparent transparent;
+}
+
+/* 框架 end */
+
+
+/* close状态下的点动画 start */
+.dot-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.dot-list li {
+    width: 10rpx;
+    height: 10rpx;
+    background-color: #9c9c9c;
+    border-radius: 50%;
+    margin-right: 2rpx;
+    display: inline-block;
+    animation: dot-animation 1s infinite alternate;
+    /* 使用动画 */
+}
+
+.dot-list li:nth-child(2) {
+    animation-delay: 0.2s;
+    /* 第二个小点延迟0.2s启动动画 */
+}
+
+.dot-list li:nth-child(3) {
+    animation-delay: 0.4s;
+    /* 第三个小点延迟0.4s启动动画 */
+}
+
+@keyframes dot-animation {
+    0% {
+        opacity: 0.3;
+        /* 初始透明度为0.5 */
+    }
+
+    100% {
+        opacity: 1;
+        /* 最终透明度为1 */
+    }
+}
+
+/* close状态下的动画 end */
+
+/* close 盒子 */
+.close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* detail 盒子 */
+.detail {
+    position: relative;
+    width: 400rpx;
+    height: auto;
+    z-index: 4;
+}
+
+
+.star-mov-area{
+    width: 700rpx;
+    height: 700rpx;
+    background-color: #9c9c9c;
+}
+
+
+/* detail 内部内容 start */
+.more-detail {
+    position: absolute;
+    bottom: 2rpx;
+    right: 2rpx;
+    z-index: 999;
+}
+
+.back-to-close-status {
+    position: absolute;
+    top: 2rpx;
+    right: 2rpx;
+    z-index: 999;
+}
+
+.content {
+    /* background-color: blue; */
+}
+
+.title {
+    width: 100%;
+    margin-left: 40rpx;
+    font-size: 40rpx;
+    font-family: 'deyiFont';
+}
+
+.star-sub-title {
+    font-weight: 600;
+    font-size: 25rpx;
+    margin-top: 10rpx;
+    display: flex;
+    align-items: center;
+}
+
+.star-sub-title:nth-child(1)::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 4rpx;
+    background-color: red;
+}
+
+.star-sub-title:nth-child(3)::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 4rpx;
+    background-color: rgb(116, 116, 116);
+}
+
+.star-sub-title:nth-child(5)::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 4rpx;
+    background-color: blue;
+}
+
+.star-sub-title:nth-child(7)::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 4rpx;
+    background-color: green;
+}
+
+.star-sub-content {
+    padding-left: 20rpx;
+    font-size: 30rpx;
+    width: auto;
+}
+
+/* detail 内部内容 end */
+
+/* more 内部内容 start */
+
+.more {
+    position: relative;
+    width: 600rpx;
+}
+
+.star-introduction {
+    /* background-color: #9c9c9c; */
+    font-size: 31rpx;
+    margin: 30rpx;
+}
+
+
+.star-photo-swiper-container {
+    width: 100%;
+    height: 200rpx;
+    /* margin: 10rpx; */
+}
+
+.star-photo {
+    width: 100%;
+    height: 90%;
+}
+
+.skeleton {}
+
+.skeleton-title {
+    text-align: center;
+    height: 40rpx;
+    margin: 10rpx 0 0 0rpx;
+}
+
+.skeleton :nth-child(2) {
+    margin-top: 15rpx;
+    height: 25rpx;
+    width: 50%;
+}
+
+.skeleton :nth-child(3) {
+    margin-top: 15rpx;
+    height: 30rpx;
+}
+
+.skeleton :nth-child(4) {
+    margin-top: 15rpx;
+    height: 25rpx;
+    width: 50%;
+}
+
+.skeleton :nth-child(5) {
+    margin-top: 15rpx;
+    height: 30rpx;
+}
+
+.skeleton :nth-child(6) {
+    margin-top: 15rpx;
+    height: 25rpx;
+    width: 50%;
+}
+
+.skeleton :nth-child(7) {
+    margin-top: 15rpx;
+    height: 30rpx;
+}
+
+.skeleton :nth-child(8) {
+    margin-top: 15rpx;
+    height: 25rpx;
+    width: 50%;
+}
+
+.skeleton :nth-child(9) {
+    margin-top: 15rpx;
+    height: 30rpx;
+    margin-bottom: 10rpx;
+}

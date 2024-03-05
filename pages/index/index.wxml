@@ -1,0 +1,115 @@
+<!-- index.wxml -->
+<navigation-bar title="侨韵潮绘" back="{{false}}" color="black" background="#FFF" class="nav"></navigation-bar>
+<my-loading showLoading="{{isLoading}}" class="loading"></my-loading>
+<walking-loading showLoading="{{isWalking}}" class="walking"></walking-loading>
+<!-- 导航栏 -->
+<view id="navbarContainer" animation="{{navbarContainerAnimation}}">
+  <view class="map_container" wx:if="{{index == 1}}">
+    <van-tabs animated line-width="50rpx" line-height="10rpx" bind:click="changeMap">
+      <van-tab title="Map1" custom-class="border">
+        <div class="frame">
+          <movable-area scale-area class="frame-mov-area">
+            <image class="image" src="{{map1_url}}"></image>
+            <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}" x="{{map1_place_1_x}}" y="{{map1_place_1_y}}">
+              <star-place msg="西堤公园" direction="right" class="star" bindbacktoclose="onBackToClose" data-id="1"></star-place>
+            </movable-view>
+            <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}" x="{{map1_place_2_x}}" y="{{map1_place_2_y}}">
+              <star-place msg="汕头埠" direction="right" class="star" bindbacktoclose="onBackToClose" data-id="2"></star-place>
+            </movable-view>
+            <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}" x="{{map1_place_3_x}}" y="{{map1_place_3_y}}">
+              <star-place msg="小公园开埠区" direction="right" class="star" bindbacktoclose="onBackToClose" data-id="3"></star-place>
+            </movable-view>
+          </movable-area>
+        </div>
+      </van-tab>
+      <van-tab title="Map2" custom-class="border">
+        <div class="frame">
+          <movable-area scale-area class="frame-mov-area">
+            <image class="image" src="{{map2_url}}"></image>
+            <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}" x="{{map2_place_1_x}}" y="{{map2_place_1_y}}">
+              <star-place msg="" direction="right" class="star" bindbacktoclose="onBackToClose" data-id="1"></star-place>
+            </movable-view>
+            <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}" x="{{map2_place_2_x}}" y="{{map2_place_2_y}}">
+              <star-place msg="" direction="right" class="star" bindbacktoclose="onBackToClose" data-id="2"></star-place>
+            </movable-view>
+          </movable-area>
+        </div>
+      </van-tab>
+      <van-tab title="Map3" custom-class="border">
+        <div class="frame">
+          <movable-area scale-area class="frame-mov-area">
+            <image class="image" src="{{map3_url}}"></image>
+            <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}" x="{{map3_place_1_x}}" y="{{map3_place_1_y}}">
+              <star-place msg="" direction="right" class="star" bindbacktoclose="onBackToClose" data-id="1"></star-place>
+            </movable-view>
+            <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}" x="{{map3_place_2_x}}" y="{{map3_place_2_y}}">
+              <star-place msg="" direction="right" class="star" bindbacktoclose="onBackToClose" data-id="2"></star-place>
+            </movable-view>
+          </movable-area>
+        </div>
+      </van-tab>
+      <van-tab title="Map4" custom-class="border">
+        <div class="frame">
+          <movable-area scale-area class="frame-mov-area">
+            <image class="image" src="{{map4_url}}"></image>
+            <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}" x="{{map4_place_1_x}}" y="{{map4_place_1_y}}">
+              <star-place msg="" direction="right" class="star" bindbacktoclose="onBackToClose" data-id="1"></star-place>
+            </movable-view>
+          </movable-area>
+        </div>
+      </van-tab>
+      <van-tab title="Map5" custom-class="border">
+        <div class="frame">
+          <movable-area scale-area class="frame-mov-area">
+            <image class="image" src="{{map5_url}}"></image>
+            <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}" x="{{map5_place_1_x}}" y="{{map5_place_1_y}}">
+              <star-place msg="" direction="right" class="star" bindbacktoclose="onBackToClose" data-id="1"></star-place>
+            </movable-view>
+          </movable-area>
+        </div>
+      </van-tab>
+    </van-tabs>
+  </view>
+  <view id="navbar">
+    <view id="bubbleWrapper">
+      <view id="bubble1" class="bubble" animation="{{bubble1Animation}}">
+        <span class="icon" animation="{{icon1Animation}}">
+          <van-icon name="location-o" size="25px" />
+        </span>
+      </view>
+      <view id="bubble2" class="bubble" animation="{{bubble2Animation}}">
+        <span class="icon" animation="{{icon2Animation}}">
+          <van-icon name="contact-o" size="25px" />
+        </span>
+      </view>
+      <view id="bubble3" class="bubble" animation="{{bubble3Animation}}">
+        <span class="icon" animation="{{icon3Animation}}">
+          <van-icon name="link-o" size="25px" />
+        </span>
+      </view>
+      <view id="bubble4" class="bubble" animation="{{bubble4Animation}}">
+        <span class="icon" animation="{{icon4Animation}}">
+          <van-icon name="list-switch" size="25px" />
+        </span>
+      </view>
+    </view>
+    <view id="menuWrapper">
+      <view id="menu1" class="menuElement" bindtap="move" data-id="1" data-position="95rpx" data-color="#ffcc80">
+        <van-icon name="location-o" size="20px" animation="{smallIcon1Animation}" />
+      </view>
+      <view id="menu2" class="menuElement" bindtap="move" data-id="2" data-position="280rpx" data-color="#81d4fa">
+        <van-icon name="contact-o" size="20px" animation="{smallIcon2Animation}" />
+      </view>
+      <view id="menu3" class="menuElement" bindtap="move" data-id="3" data-position="467rpx" data-color="#c5e1a5">
+        <van-icon name="link-o" size="20px" animation="{smallIcon3Animation}" />
+      </view>
+      <view id="menu4" class="menuElement" bindtap="move" data-id="4" data-position="655rpx" data-color="#ce93d8">
+        <van-icon name="list-switch" size="20px" animation="{smallIcon4Animation}" />
+      </view>
+    </view>
+  </view>
+  <view id="bgWrapper">
+    <view id="bg" animation="{{bgAnimation}}"></view>
+    <view id="bgBubble" animation="{{bgBubbleAnimation}}"></view>
+  </view>
+</view>

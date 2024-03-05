@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@vant/weapp": "^1.11.4",
+    "gsap": "^3.12.5"
+  }
+}
