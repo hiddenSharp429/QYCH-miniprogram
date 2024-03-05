@@ -22,6 +22,8 @@ Page({
     map2_place_1_y: '0rpx',
     map2_place_2_x: '340rpx',
     map2_place_2_y: '980rpx',
+    map2_place_3_x: '380rpx',
+    map2_place_3_y: '70rpx',
     map3_place_1_x: '280rpx',
     map3_place_1_y: '220rpx',
     map3_place_2_x: '200rpx',
@@ -31,8 +33,8 @@ Page({
     map5_place_1_x: '280rpx',
     map5_place_1_y: '460rpx',
 
-    map1_url: 'https://636c-cloud1-0glmim4o153108f5-1308665665.tcb.qcloud.la/map1.jpg?sign=655659b69dc923951dd527e1b276ffc7&t=1709038022',
-    map2_url: 'https://636c-cloud1-0glmim4o153108f5-1308665665.tcb.qcloud.la/map2.jpg?sign=01c9e6ef2eb687a4905fdab9220f67a0&t=1709135120',
+    map1_url: 'https://636c-cloud1-0glmim4o153108f5-1308665665.tcb.qcloud.la/map1.jpg?sign=5118d12057b55bcd5e7229924fe02ea2&t=1709618687',
+    map2_url: 'https://636c-cloud1-0glmim4o153108f5-1308665665.tcb.qcloud.la/map2.jpg?sign=aaebf336b4b67050becba3eb6e7e4301&t=1709618697',
     map3_url: 'https://636c-cloud1-0glmim4o153108f5-1308665665.tcb.qcloud.la/map3.jpg?sign=0f1ab17c1eed96f1a40159e01bf17b9e&t=1709135243',
     map4_url: 'https://636c-cloud1-0glmim4o153108f5-1308665665.tcb.qcloud.la/map4.jpg?sign=05c0dd1e9a85855e4f386ec1d262a613&t=1709135276',
     map5_url: 'https://636c-cloud1-0glmim4o153108f5-1308665665.tcb.qcloud.la/map5.jpg?sign=10b39b99175e455199cb0549cede2b71&t=1709135287',
@@ -214,8 +216,10 @@ Page({
   },
   onBackToClose(event) {
     const id = event.currentTarget.dataset.id;
-    const newX = `map1_place_${id}_x`;
-    const newY = `map1_place_${id}_y`;
+    const map_id = event.currentTarget.dataset.map;
+    const newX = `map${map_id}_place_${id}_x`;
+    const newY = `map${map_id}_place_${id}_y`;
+
     this.setData({
       [newX]: this.data[newX], // 重置为初始 x 坐标
       [newY]: this.data[newY]  // 重置为初始 y 坐标

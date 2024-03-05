@@ -94,6 +94,7 @@ page {
 
 .star {
   position: absolute;
+  z-index: 10;
 }
 
 /* 地图样式END */

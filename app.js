@@ -48,5 +48,7 @@ App({
     // 跨账号调用，必须等待 init 完成
     // init 过程中，资源方小程序对应环境下的 cloudbase_auth 函数会被调用，并需返回协议字段（见下）来确认允许访问、并可自定义安全规则
     await c1.init()
+
+    this.globalData.c1 = c1
   },
 })

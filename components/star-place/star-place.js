@@ -1,4 +1,5 @@
 const effectUtils = require('../../utils/playEffect.js');
+const init = require("../../utils/cloud_init");
 
 Component({
   /**
@@ -25,7 +26,8 @@ Component({
     click_effect_url: 'https://636c-cloud1-0glmim4o153108f5-1308665665.tcb.qcloud.la/%E6%B3%A1%E6%B2%AB_Freesound.mp3?sign=87112852f355dbbdaa846b6fdb4a8c07&t=1709206496',
     turn_over_book_effect_url: 'https://636c-cloud1-0glmim4o153108f5-1308665665.tcb.qcloud.la/turn-over-the-book.mp3?sign=a86a70133441faf6df86fba45cacb258&t=1709211203',
     silde_effect_url: 'https://636c-cloud1-0glmim4o153108f5-1308665665.tcb.qcloud.la/slide.mp3?sign=60c22eea0febc4326173bd971a9e0a31&t=1709212316',
-    db: null
+    db: null,
+    backgroud_image_url: ''
   },
   /**
    * 组件的方法列表
@@ -68,6 +70,7 @@ Component({
         this.setData({
           detail_inf: res.data,
           photo_url: res.data[0].photo_url,
+          backgroud_image_url: res.data[0].backgroud_image_url,
           loading: false
         });
       });
