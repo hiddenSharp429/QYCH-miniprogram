@@ -7,7 +7,7 @@
   <view class="map_container" wx:if="{{index == 1}}">
     <van-tabs animated line-width="50rpx" line-height="10rpx" bind:click="changeMap">
       <van-tab title="Map1" custom-class="border">
-        <image src="../../img/compass.png" alt="" style="position: absolute; top: 40rpx; right: 40rpx;width: 120rpx;height: 120rpx; z-index: 999; transform: rotate(90deg);" />
+        <image src="../../img/compass.png" alt="" style="position: absolute; top: 40rpx; right: 40rpx;width: 120rpx;height: 120rpx; z-index: 999;" />
         <div class="frame">
           <movable-area scale-area class="frame-mov-area">
             <image class="image" src="{{map1_url}}"></image>
@@ -19,6 +19,15 @@
             </movable-view>
             <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}" x="{{map1_place_3_x}}" y="{{map1_place_3_y}}">
               <star-place msg="小公园开埠区" direction="right" class="star" bindbacktoclose="onBackToClose" data-id="3" data-map="1"></star-place>
+            </movable-view>
+            <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}" x="{{map2_place_1_x}}" y="{{map2_place_1_y}}">
+              <star-place msg="金凤坛" direction="right" class="star" bindbacktoclose="onBackToClose" data-id="1" data-map="2"></star-place>
+            </movable-view>
+            <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}" x="{{map2_place_2_x}}" y="{{map2_place_2_y}}">
+              <star-place msg="至平路" direction="right" class="star" bindbacktoclose="onBackToClose" data-id="2" data-map="2"></star-place>
+            </movable-view>
+            <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}" x="{{map2_place_3_x}}" y="{{map2_place_3_y}}">
+              <star-place msg="潮汕铁路" direction="right" class="star" bindbacktoclose="onBackToClose" data-id="3" data-map="2"></star-place>
             </movable-view>
           </movable-area>
         </div>

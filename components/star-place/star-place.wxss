@@ -29,11 +29,11 @@
 }
 
 .star-bubble-body.left {
-    background-color: #f0f0f0;
+    background-color: #d8d7d7;
 }
 
 .star-bubble-body.right {
-    background-color: #f0f0f0;
+    background-color: #d8d7d7;
 }
 
 .star-bubble-head {
@@ -48,7 +48,7 @@
     width: 0;
     height: 0;
     border-width: 20rpx 0 20rpx 20rpx;
-    border-color: transparent transparent transparent #f0f0f0;
+    border-color: transparent transparent transparent #d8d7d7;
 }
 
 .star-bubble-head.right {
@@ -56,7 +56,7 @@
     width: 0;
     height: 0;
     border-width: 10px 10px 10px 0;
-    border-color: transparent #f0f0f0 transparent transparent;
+    border-color: transparent #d8d7d7 transparent transparent;
 }
 
 /* 框架 end */
